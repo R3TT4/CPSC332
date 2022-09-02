@@ -1,1 +1,1 @@
-# participation-example
+# cpsc332
