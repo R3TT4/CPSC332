@@ -4,9 +4,69 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>9-14 Participation</title>
+
+        <style>
+            table,
+            th,
+            td{
+                border: 5px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+
     </head>
     <body>
-        <h1>Hello World :)</h1>
-        <h2>Participation for 9-14</h2>
+        <h1>Tables Participation</h1>
+        <table>
+            <caption>
+                This is a table :)
+            </caption>
+            <thead>
+                <tr>
+                    <th>
+                        Row 1, Col 1
+                    </th>
+                    <th>
+                        Row 1, Col 2
+                    </th>
+                    <th>
+                        Row 1, Col 3
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Row 2, Col 1
+                    </td>
+                    <td>
+                        Row 2, Col 2
+                    </td>
+                    <td rowspan="2">
+                        Row 2-3, Col 3
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Row 3, Col 1-2
+                    </td>
+                    <!-- <td>
+                        Row 3, Col 2
+                    </td>
+                    <td>
+                        Row 3, Col 3
+                    </td> -->
+                </tr>
+            </tbody>
+            <tfoot>
+                <td colspan="3">
+                    Footer row
+                </td>
+            </tfoot>
+        </table>
+
+        <!-- Images -->
+        <br/>
+        <img src="knicks.jpg" height="200" alt="Image of the New York Knicks">
     </body>
 </html>
