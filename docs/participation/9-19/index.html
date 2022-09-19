@@ -1,0 +1,58 @@
+<!-- Based off of CPSC332 Example -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>9-19 Participation</title>
+</head>
+
+<body>
+    <h1>Fake McDonald's Application</h1>
+    <img src="mcd.png" width="500"
+        alt="McDonalds logo from https://corporate.mcdonalds.com/corpmcd/our-stories/media-assets-library/logos.html">
+    <form action="submission.html">
+        <p>
+            <label for="first">First Name:</label>
+            <input type="text" name="first" id="first" placeholder="Enter First Name">
+        </p>
+        <p>
+            <label for="last">Last Name:</label>
+            <input type="text" name="last" id="last" placeholder="Enter Last Name">
+        </p>
+        <p>
+            <label for="area">Enter some cool text</label>
+            <textarea id="area" rows="5" name="area">Sample Text</textarea>
+        </p>
+        <p>
+            <label for="checker">Motor Oil</label>
+            <input type="checkbox" id="checker">
+        </p>
+        <p>
+            <label for="cheese">Cheese</label>
+            <input type="radio" name="foodItem" value="Cheese" id="cheese">
+            <label for="pickle">Pickle</label>
+            <input type="radio" name="foodItem" value="Pickle" id="pickle">
+        </p>
+        <p>
+            <label for="Salary">Requested Salary</label>
+            <select name="Salary">
+                <option value="1">$1</option>
+                <option value="10">$10</option>
+                <option value="100">$100</option>
+                <option value="1000">$1000</option>
+                <option value="10000">$10000</option>
+            </select>
+            <label for="password">Fake Password</label>
+            <input type="password" name="password" size="10" maxlength="10">
+        </p>
+        <p>
+            <input type="submit" value="Submit Application">
+        </p>
+    </form>
+    <a href="../../">Back to the index</a>
+</body>
+
+</html>
