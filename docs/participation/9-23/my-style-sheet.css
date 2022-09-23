@@ -1,0 +1,8 @@
+li {
+    background-color: burlywood;
+}
+
+#main-header:hover::after {
+    content: "Bruh Emoji";
+    background-color: crimson;
+}

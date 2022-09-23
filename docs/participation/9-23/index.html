@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-23 Participation</title>
+
+    <link rel="stylesheet" href="my-style-sheet.css">
+
+    <style>
+        h1 {
+            background-color: rgb(148, 223, 201);
+        }
+
+        li {
+            background-color: green;
+        }
+
+        /* id selector */
+        #main-header,
+        li {
+            color: rgb(255, 123, 0);
+        }
+
+        /* class selector */
+        .sub-header {
+            color: blue;
+        }
+
+        /* descendant selector */
+        span li {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="main-header">9-23 Participation</h1>
+    <h1 style="background-color: rgb(236, 241, 159);">Another Header</h1>
+    <ul>
+        <li>List item 1</li>
+        <li style="background-color: powderblue;">List item 2</li>
+    </ul>
+
+
+    <h2 class="sub-header">This is a L2 header</h2>
+
+    <h3 class="sub-header">This is a L3 header</h3>
+
+    <span>
+        This is a span
+        <ul>
+            <li>This is inside a span</li>
+        </ul>
+    </span>
+
+    <table>
+        <tr>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>
