@@ -16,12 +16,14 @@
         div {}
 
         #fake-button {
+            font-size: xxx-large;
             /*
                 offset-x - Horizontal pixel offset of shadow
                 offset-y - Vertical pixel offset of shadow
                 blur-radius - Optional shadow blur (default is 0)
                 color - Optional shadow color (default is usually the current CSS color)
             */
+            text-shadow: 1px 1px 15px rgb(141, 5, 5);
 
             /*
                 inset - Optional value that draws the shadow inside the box (default is outside the box)
@@ -31,6 +33,8 @@
                 spread-radius - Positive value causes shadow to grow, negative values to shrink (default is 0)
                 color - Optional shadow color (default is usually the current CSS color)
             */
+
+            box-shadow: 5px 5px 50px green;
 
             /* border-radius
                 Single value - All four corners are equally rounded
