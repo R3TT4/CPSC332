@@ -33,7 +33,7 @@
             let aString = "2";
             console.log(nombre + 2);
             console.log(nombre + "2");
-            console.log(nobre + parseInt(aString));
+            console.log(nombre + parseInt(aString));
 
             if (nombre === 10) { //Identity; empty string evaluates to false
 
@@ -42,24 +42,79 @@
 
             }
 
-            printTwoConsole("Waltuh", 308)
+            printTwoConsole("Waltuh", 308);
 
             function printTwoConsole(message, number) {
                 console.log(message + " " + number);
-                return "Waltuh that's Sus"
+                return "Waltuh that's Sus";
             }
 
-            let myResult = printTwoConsole("Waltuh", 308)
+            let myResult = printTwoConsole("Waltuh", 308);
 
+            // https://www.w3schools.com/js/js_arrow_function.asp
+            let arrowAdd2 = (x, y, z) => x + 2;
+            arrowAdd2(1, 2, 3);
 
+            var myArray = [1, 2, "Z", 4]; //Can mix types
+            for (let i = 0; i < myArray.length; i++) {
+                console.log(myArray[i]);
+            }
 
+            for (const myVal of myArray) {
+                console.log(myVal);
+            }
+
+            myArray.forEach(function (item, i) {
+                console.log(item + " at index: " + i);
+            });
+
+            var myObject = {
+                // Object variables
+                name: "defaultName",
+                number: 77,
+                array: [1, 2, 3, 4],
+
+                // Object methods
+                printer: function (value) {
+                    console.log(value);
+                },
+
+                get numberPlusOne() {
+                    return this.number + 1;
+                },
+
+                set numberPlusAnother(num) {
+                    this.number += num;
+                }
+
+            };
+
+            myObject.name = "Waltuh"
+            console.log(myObject.name);
+            myObject.printer("Balter");
+
+            myObject.numberPlusAnother = 10; //setter
+            console.log(myObject.numberPlusOne);
+
+            let dateTimeNow = new Date();
+            console.log(dateTimeNow);
+
+            try {
+                fakeObject.fakeVar = 10;
+            }
+            catch (error) {
+                console.log("Amongus Error")
+            }
+            finally {
+                console.log("Amongsus")
+            }
         }
     </script>
 
 </head>
 
 <body>
-    <h1>Javascripto</h1>
+    <h1>Javascripterino 10-10</h1>
     <a href="../../">Link back to index page</a>
 </body>
 
