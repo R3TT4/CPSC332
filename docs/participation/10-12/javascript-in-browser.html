@@ -15,9 +15,10 @@
     <script>
         window.onload = function () {
 
-
             //document represents the entire DOM
             var thisDocument = document.getElementById("container");
+            console.log(thisDocument.innerHTML);
+
             //window object
             console.log(window.innerWidth);
             console.log(window.innerHeight);
@@ -25,11 +26,32 @@
 
             //"selecting" DOM elements so we can access them with JS
             //var thisDocument = document.getElementById("container");
-            var listItems = document.getElementsByTagName("li");
-            var unorderedList = document.getElementsByClassName("unordered-list");
-            var allDivs = document.querySelectorAll("body div");
-            var firstDiv = document.querySelector("body div");
+            var listItems = document.getElementsByTagName("li"); // Array of elements
+            var unorderedList = document.getElementsByClassName("unordered-list"); // Array
+            var allDivs = document.querySelectorAll("body div"); // Gets all
+            var firstDiv = document.querySelector("body div"); // Gets One
 
+            // Event Handler
+            document.getElementById("date-button-start").addEventListener("click", startClock);
+            document.getElementById("date-button-stop").addEventListener("click", stopClock);
+
+            var clock = null;
+
+            function startClock() {
+                console.log("Start Clock");
+                clock = setInterval(updateClock, 1000);
+            }
+
+            function stopClock() {
+                console.log("Stop Clock");
+                clearInterval(clock);
+            }
+
+            function updateClock() {
+                console.log("I am the one who clocks");
+                let dateItem = document.getElementById("date-span")
+                dateItem.innerText = new Date();
+            }
 
         }//end of onload function
     </script>
