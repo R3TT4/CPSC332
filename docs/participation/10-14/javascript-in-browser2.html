@@ -57,11 +57,60 @@
             function stopClock() {
                 console.log("stop clock clicked");
                 clearInterval(clock);
+                document.getElementById("date-span").textContent = "Click for the current Date-Time";
             }
 
             function updateClock() {
                 console.log("I'm a clock!");
+                document.getElementById("date-span").textContent = new Date();
             }
+
+            // changing css with javascript
+            let mouseHover = document.getElementById("fieldset");
+            mouseHover.addEventListener("mouseover", () => {
+                //alert("hovering over fieldset");
+
+                let divs = document.getElementsByTagName("div");
+
+                for (const div of divs) {
+                    div.style.setProperty("background-color", "green");
+                }
+                //insert a rule into the stylesheet
+                document.styleSheets[0].insertRule("li {background-color: yellow; color: blue;}");
+            });
+
+            mouseHover.addEventListener("mouseout", () => {
+                //alert("hovering over fieldset");
+                let divs = document.getElementsByTagName("div");
+
+                for (const div of divs) {
+                    div.style.setProperty("background-color", "white");
+                }
+                //insert a rule into the stylesheet
+                document.styleSheets[0].deleteRule("li");
+            });
+
+            document.getElementById("remove-div").addEventListener("click", removeDiv);
+            document.getElementById("add-div").addEventListener("click", addDiv);
+
+            function removeDiv() {
+                if (document.getElementById("temp-div") != null) {
+                    document.getElementById("temp-div").remove();
+                }
+
+            }
+
+            function addDiv() {
+                //only add if the div isn't already there
+                if (document.getElementById("temp-div") == null) {
+                    //create a new variable for building our html element
+                    let newDiv = document.createElement("div");
+                    newDiv.id = "temp-div";
+                    newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;";
+                    document.getElementById("container").appendChild(newDiv);
+                }
+            }
+
 
         }//end of onload function
     </script>
@@ -92,7 +141,7 @@
     </ul>
     </p>
     <!-- #1 -->
-    <fieldset>
+    <fieldset id="fieldset">
         <legend>
             <strong><em>JavaScript Clock</em></strong>
         </legend>
