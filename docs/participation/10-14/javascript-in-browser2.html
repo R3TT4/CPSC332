@@ -52,21 +52,23 @@
             function startClock() {
                 console.log("start clock clicked");
                 clock = setInterval(updateClock, 1000);
-            }
+            };
 
             function stopClock() {
                 console.log("stop clock clicked");
                 clearInterval(clock);
                 document.getElementById("date-span").textContent = "Click for the current Date-Time";
-            }
+            };
 
             function updateClock() {
                 console.log("I'm a clock!");
                 document.getElementById("date-span").textContent = new Date();
-            }
+            };
 
             // changing css with javascript
+
             let mouseHover = document.getElementById("fieldset");
+            /*
             mouseHover.addEventListener("mouseover", () => {
                 //alert("hovering over fieldset");
 
@@ -78,6 +80,7 @@
                 //insert a rule into the stylesheet
                 document.styleSheets[0].insertRule("li {background-color: yellow; color: blue;}");
             });
+            
 
             mouseHover.addEventListener("mouseout", () => {
                 //alert("hovering over fieldset");
@@ -89,6 +92,7 @@
                 //insert a rule into the stylesheet
                 document.styleSheets[0].deleteRule("li");
             });
+            */
 
             document.getElementById("remove-div").addEventListener("click", removeDiv);
             document.getElementById("add-div").addEventListener("click", addDiv);
@@ -98,7 +102,7 @@
                     document.getElementById("temp-div").remove();
                 }
 
-            }
+            };
 
             function addDiv() {
                 //only add if the div isn't already there
@@ -108,8 +112,32 @@
                     newDiv.id = "temp-div";
                     newDiv.style = "border: 2px solid red; padding: 10px; border-radius: 30px; margin: 15px;";
                     document.getElementById("container").appendChild(newDiv);
+
+                    //lets add paragraph
+                    let newPara = document.createElement("p");
+                    let date = new Date();
+
+                    //set paragraph content
+                    newPara.textContent = `Hello World. Time is: ${date}`;
+                    document.getElementById("temp-div").appendChild(newPara);
+
                 }
-            }
+            };
+
+            // document.getElementById("temp-div").addEventListener("click", () => {
+            //     alert("temp-div-clicked");
+            // });
+
+            // Problem: Event listener is not added dynamically
+            // Solution: Event listener can be added to container which remains constant
+            document.getElementById("container")
+                .addEventListener("click", function (e) {
+                    if (e.target.id == "temp-div") {
+                        alert("dynamic temp-div clicked");
+                    } else {
+                        alert("not temp-div");
+                    }
+                });
 
 
         }//end of onload function
