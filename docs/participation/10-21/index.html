@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 10-21</title>
+    <style>
+        body {
+            background-image: url("best-corvette.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center bottom;
+            background-size: 100% 50%;
+        }
+
+        legend {
+            padding: 5px;
+        }
+
+        fieldset {
+            border: 2px solid blue;
+            margin: 10px;
+            padding: 25px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            let corvette = document.getElementById("corvette");
+            let color = document.getElementById("color");
+            let paint = document.getElementById("paint");
+            let cButton = document.getElementById("c-button");
+            let rButton = document.getElementById("r-button");
+            let pButton = document.getElementById("p-button");
+            let submitButton = document.getElementById("submitter");
+
+            let b1 = false;
+            let b2 = false;
+            let b3 = false;
+
+            if (localStorage.getItem("corvette")) {
+                corvette.value = sessionStorage.getItem("corvette");
+            }
+            if (localStorage.getItem("color")) {
+                color.value = sessionStorage.getItem("color");
+            }
+            if (localStorage.getItem("paint")) {
+                paint.value = sessionStorage.getItem("paint");
+            }
+
+            cButton.addEventListener('click', () => {
+                if (corvette.value == "") {
+                    alert("Text Field Cant Be Empty")
+                } else {
+                    sessionStorage.setItem("corvette", corvette.value);
+                    b1 = true;
+                }
+            });
+            rButton.addEventListener('click', () => {
+                if (color.value == "") {
+                    alert("Text Field Cant Be Empty")
+                } else {
+                    sessionStorage.setItem("color", color.value);
+                    b2 = true;
+                }
+            });
+            pButton.addEventListener('click', () => {
+                if (paint.value == "") {
+                    alert("Text Field Cant Be Empty")
+                } else {
+                    sessionStorage.setItem("paint", paint.value);
+                    b3 = true;
+                }
+            });
+
+            document.getElementById("form").onsubmit = () => {
+                if (!b1 || !b2 || !b3) {
+                    alert("All fields must be saved before submitting.");
+                    return false;
+                } else {
+                    return true;
+                }
+            };
+        };
+
+    </script>
+
+</head>
+
+<body>
+    <fieldset>
+        <legend>CPSC 332 10/21 Participation</legend>
+        <form id="form" action="submission.html">
+            <p>
+                <label for="corvette">Which Corvette is best Corvette?</label>
+                <input type="text" name="corvette" id="corvette" placeholder="Enter Best Corvette">
+                <input type="button" name="c-button" id="c-button" value="Save">
+            </p>
+            <p>
+                <label for="color">Rare Color?</label>
+                <input type="text" name="color" id="color" placeholder="Enter Rare Color">
+                <input type="button" name="r-button" id="r-button" value="Save">
+            </p>
+            <p>
+                <label for="paint">Paint your headlights so they work less?</label>
+                <input type="text" name="paint" id="paint" placeholder="Enter Why">
+                <input type="button" name="p-button" id="p-button" value="Save">
+            </p>
+            <p>
+                <input type="submit" id="submitter" value="Submit Response">
+            </p>
+        </form>
+    </fieldset>
+
+    <a href="../../index.html">Back to the participation index</a>
+</body>
+
+</html>
