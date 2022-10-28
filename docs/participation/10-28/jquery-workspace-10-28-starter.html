@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery Workspace 10/26</title>
+    <title>JQuery Workspace 10/28</title>
     <!-- //#1 How do we use JQuery? Include the script! -->
     <!-- Download and reference a local file -->
     <!-- <script src="jquery-3.6.1.min.js"></script> -->
@@ -13,6 +13,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 
     <script>
 
@@ -63,23 +66,46 @@
             //let's try a different event
             //JavaScript Method
             let headers = document.getElementsByTagName("h1");
-            $(headers).on("doubleclick",);
 
-
+            for (const element of headers) {
+                element.addEventListener("dblclick", function () {
+                    console.log("Double Clickerooed");
+                    $("body").append($("<h2>").text("New h2!"));
+                });
+            }
 
             //JQuery Method
+            $("h1").on("dblclick", function () {
+                console.log("Double Clickerooed againe");
+                $("body").append($("<h2>").text("Newer h2!?"));
+            });
 
 
             //#7. Styles!
             //method 1: property-value pair
+            $("div").css("border", "2px double blue");
 
             //method 2: object literal
+            $("div").css({
+                padding: "10px",
+                borderRadius: "20px",
+                "margin-top": "10px",
+                backgroundColor: "yellow",
+
+            });
 
 
             //Activity (Using JQuery):
             //1. Center the button created in this lecture using the property-value pair CSS method 1 demonstrated during lecture.
             //2. Apply a background color, border, padding, and margin (your choice) to the ordered list using the object literal method demonstrated during lecture
             //3. Add an event listener to the ordered list list items so the color changes as you hover over each individual list item (color is your choice).
+
+
+            $("div").attr("class", "draggable ui-widget-content");
+
+            $(function () {
+                $(".draggable").draggable();
+            });
 
         }); //end of ready function 
     </script>
